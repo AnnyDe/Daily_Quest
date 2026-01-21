@@ -81,7 +81,7 @@ function displayTask() {
     }
     
     document.getElementById('finalTask').textContent = 
-        `Zeichne, beschreibe oder gestalte ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
+        `Erarbeite eine ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
 }
 
 // Aufgabe beim Laden anzeigen
