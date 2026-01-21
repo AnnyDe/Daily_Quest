@@ -81,7 +81,7 @@ function displayTask() {
     }
     
     document.getElementById('finalTask').textContent = 
-        `Erarbeite eine ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
+        `Erarbeite ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
 }
 
 // Aufgabe beim Laden anzeigen
