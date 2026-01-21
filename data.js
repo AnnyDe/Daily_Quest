@@ -16,7 +16,8 @@ const basisKategorien = {
         items: [
             'Drache', 'Einhorn', 'Phönix', 'Greif', 'Elementar', 
             'Geist', 'Golem', 'Chimäre', 'Basilisk', 'Sphinx', 
-            'Nymphe', 'Troll', 'Fee', 'Kentaur'
+            'Nymphe', 'Troll', 'Fee', 'Zwerg', 'Gnom', 
+            'Werwolf', 'Vampir', 'Mantikore', 'Mumie'
         ],
         eigenschaften: [
             'winzig', 'freundlich', 'mechanisch', 'ätherisch', 
