@@ -37,11 +37,17 @@ function generateDailyTask() {
     // Wähle zufälliges Extra aus allen möglichen
     const extra = getRandomFromArray(alleExtras, seed + 3);
     
+    // Stimmtraining-Aufgabe
+    const stimmmerkmal = getRandomFromArray(stimmmerkmale, seed + 4);
+    const rolle = getRandomFromArray(rollen, seed + 5);
+    
     return {
         kategorie: kategorie,
         basis: basis,
         eigenschaft: eigenschaft,
-        extra: extra
+        extra: extra,
+        stimmmerkmal: stimmmerkmal,
+        rolle: rolle
     };
 }
 
@@ -81,7 +87,14 @@ function displayTask() {
     }
     
     document.getElementById('finalTask').textContent = 
-        `Erarbeite ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
+        `Zeichne, beschreibe oder gestalte ${artikel} ${eigenschaftForm} ${task.basis} ${task.extra}!`;
+    
+    // Stimmtraining-Aufgabe
+    document.getElementById('stimmmerkmal').textContent = task.stimmmerkmal;
+    document.getElementById('rolle').textContent = task.rolle;
+    
+    document.getElementById('voiceTask').textContent = 
+        `Sprich als ${task.rolle} mit ${task.stimmmerkmal}er Stimme über deine kreative Aufgabe!`;
 }
 
 // Aufgabe beim Laden anzeigen
