@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: black;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -22,15 +22,16 @@
         }
 
         .container {
-            background: black;
+            background: white;
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
             width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            color: black;
+            color: #667eea;
             text-align: center;
             margin-bottom: 10px;
             font-size: 2.5em;
@@ -44,7 +45,7 @@
         }
 
         .task-box {
-            background: black;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 20px;
@@ -61,7 +62,7 @@
         }
 
         .task-content {
-            background: black;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             padding: 20px;
             backdrop-filter: blur(10px);
@@ -78,7 +79,7 @@
         }
 
         .final-task {
-            background: rgba(0, 0, 0);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
@@ -98,10 +99,11 @@
     </style>
 </head>
 <body>
-    <div class="container">
+        <h1> Kreativ-Aufgabe</h1>
         <div class="date" id="currentDate"></div>
         
         <div class="task-box">
+            <div class="task-title">Deine heutige Aufgabe</div>
             <div class="task-content">
                 <div class="task-element">
                     <strong>Basis:</strong> <span id="basis"></span>
@@ -116,7 +118,20 @@
                 <div class="final-task" id="finalTask"></div>
             </div>
         </div>
-    </div>
+        
+        <div class="task-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <div class="task-title"> Stimmtraining</div>
+            <div class="task-content">
+                <div class="task-element">
+                    <strong>Stimmmerkmal:</strong> <span id="stimmmerkmal"></span>
+                </div>
+                <div class="task-element">
+                    <strong>Rolle:</strong> <span id="rolle"></span>
+                </div>
+                
+                <div class="final-task" id="voiceTask"></div>
+            </div>
+        </div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
