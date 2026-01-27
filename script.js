@@ -67,8 +67,85 @@ function displayTask() {
     
     // Finale Aufgabe zusammensetzen mit korrekten deutschen Artikeln
     let artikel = 'ein';
-    const femininKategorien = ['Waffe', 'Pflanze', 'Rüstung', 'Gottheit'];
-    const maskulinKategorien = ['Ort', 'Zauber'];
+    const femininKategorien = [items: [
+            'Höhle', 
+            'Brücke', 
+            'Schmiede', 
+            'Taverne', 
+            'Bibliothek', 
+            'Chimäre', 
+            'Sphinx', 
+            'Nymphe', 
+            'Fee', 
+            'Mumie', 
+            'Magierin', 
+            'Kriegerin', 
+            'Händlerin', 
+            'Bardin', 
+            'Diebin', 
+            'Heilerin', 
+            'Gelehrtin', 
+            'Schmiedin', 
+            'Alchemistin', 
+            'Priesterin', 
+            'Assassine', 
+            'Köchin', 
+            'Forscherin', 
+            'Künstlerin', 
+            'Axt', 
+            'Dolch', 
+            'Sense', 
+            'Armbrust', 
+            'Keule', 
+            'Peitsche', 
+            'Blume', 
+            'Ranke', 
+            'Orchidee', 
+            'Rose',
+            'Lilie',
+            'Kutsche', 
+            'Gondel', 
+            'Kristallkugel', 
+            'Wolke', 
+            'Sänfte',
+            'Heilung', 
+            'Teleportation', 
+            'Illusion', 
+            'Verwandlung', 
+            'Beschwörung', 
+            'Levitation', 
+            'Unsichtbarkeit', 
+            'Zeitmanipulation', 
+            'Elementarwelle'
+            'Handschuhe', 
+            'Stiefel', 
+            'Beinschienen', 
+            'Armschienen', 
+            'Maske', 
+            'Robe'
+            'Sonnengottheit', 
+            'Mondgottheit', 
+            'Kriegsgottheit', 
+            'Liebesgottheit', 
+            'Todesgottheit', 
+            'Naturgottheit', 
+            'Weisheitsgottheit', 
+            'Chaosgottheit', 
+            'Meeresgottheit', 
+            'Feuergottheit', 
+            'Erdmutter', 
+            'Sturmgottheit', 
+            'Traumgottheit', 
+            'Schicksalsgottheit'
+            'Krone', 
+            'Münze',
+            'Sanduhr', 
+            'Laterne', 
+            'Karte'
+    ];
+    const maskulinKategorien = [
+        
+    ];
     
     if (femininKategorien.includes(task.kategorie)) {
         artikel = 'eine';
