@@ -65,159 +65,62 @@ function displayTask() {
     document.getElementById('eigenschaft').textContent = task.eigenschaft;
     document.getElementById('extra').textContent = task.extra;
     
-    // Finale Aufgabe zusammensetzen mit korrekten deutschen Artikeln
+    // Feminine Wörter (Artikel: eine, Endung: -e)
+    const femininWoerter = [
+        'Höhle', 'Brücke', 'Schmiede', 'Taverne', 'Bibliothek',
+        'Chimäre', 'Sphinx', 'Nymphe', 'Fee', 'Mumie',
+        'Magierin', 'Kriegerin', 'Händlerin', 'Bardin', 'Diebin',
+        'Heilerin', 'Gelehrtin', 'Schmiedin', 'Alchemistin', 'Priesterin',
+        'Assassine', 'Köchin', 'Forscherin', 'Künstlerin',
+        'Axt', 'Sense', 'Armbrust', 'Keule', 'Peitsche',
+        'Blume', 'Ranke', 'Orchidee', 'Rose', 'Lilie',
+        'Kutsche', 'Gondel', 'Kristallkugel', 'Wolke', 'Sänfte',
+        'Heilung', 'Teleportation', 'Illusion', 'Verwandlung',
+        'Beschwörung', 'Levitation', 'Unsichtbarkeit',
+        'Zeitmanipulation', 'Elementarwelle',
+        'Maske', 'Robe',
+        'Sonnengottheit', 'Mondgottheit', 'Kriegsgottheit',
+        'Liebesgottheit', 'Todesgottheit', 'Naturgottheit',
+        'Weisheitsgottheit', 'Chaosgottheit', 'Meeresgottheit',
+        'Feuergottheit', 'Erdmutter', 'Sturmgottheit',
+        'Traumgottheit', 'Schicksalsgottheit',
+        'Krone', 'Münze', 'Sanduhr', 'Laterne', 'Karte'
+    ];
+    
+    // Maskuline Wörter (Artikel: einen, Endung: -en)
+    const maskulinWoerter = [
+        'Wald', 'Turm', 'Tempel', 'Marktplatz', 'Friedhof',
+        'Vulkan', 'Wasserfall', 'Palast',
+        'Drache', 'Phönix', 'Greif', 'Elementar', 'Geist',
+        'Golem', 'Basilisk', 'Troll', 'Zwerg', 'Gnom',
+        'Werwolf', 'Vampir', 'Mantikore', 'Kentaur',
+        'Magier', 'Krieger', 'Händler', 'Barde', 'Dieb',
+        'Heiler', 'Gelehrter', 'Schmied', 'Alchemist', 'Priester',
+        'Koch', 'Forscher', 'Künstler',
+        'Bogen', 'Stab', 'Dolch', 'Hammer', 'Speer',
+        'Schild', 'Streitkolben',
+        'Baum', 'Pilz', 'Farn', 'Strauch', 'Kaktus',
+        'Lotus', 'Efeu', 'Bambus',
+        'Ballon', 'Teppich', 'Wagen', 'Gleiter', 'Schlitten',
+        'Feuerball', 'Eissturm', 'Blitz', 'Schutzschild',
+        'Brustpanzer', 'Helm', 'Umhang', 'Schulterpanzer',
+        'Schuppenpanzer', 'Gürtel', 'Harnisch',
+        'Ring', 'Kelch', 'Spiegel', 'Kristall', 'Schlüssel', 'Kompass'
+    ];
+    
+    // Artikel und Endung bestimmen
     let artikel = 'ein';
-    const femininKategorien = [
-            'Höhle', 
-            'Brücke', 
-            'Schmiede', 
-            'Taverne', 
-            'Bibliothek', 
-            'Chimäre', 
-            'Sphinx', 
-            'Nymphe', 
-            'Fee', 
-            'Mumie', 
-            'Magierin', 
-            'Kriegerin', 
-            'Händlerin', 
-            'Bardin', 
-            'Diebin', 
-            'Heilerin', 
-            'Gelehrtin', 
-            'Schmiedin', 
-            'Alchemistin', 
-            'Priesterin', 
-            'Assassine', 
-            'Köchin', 
-            'Forscherin', 
-            'Künstlerin', 
-            'Axt', 
-            'Dolch', 
-            'Sense', 
-            'Armbrust', 
-            'Keule', 
-            'Peitsche', 
-            'Blume', 
-            'Ranke', 
-            'Orchidee', 
-            'Rose',
-            'Lilie',
-            'Kutsche', 
-            'Gondel', 
-            'Kristallkugel', 
-            'Wolke', 
-            'Sänfte',
-            'Heilung', 
-            'Teleportation', 
-            'Illusion', 
-            'Verwandlung', 
-            'Beschwörung', 
-            'Levitation', 
-            'Unsichtbarkeit', 
-            'Zeitmanipulation', 
-            'Elementarwelle'
-            'Handschuhe', 
-            'Stiefel', 
-            'Beinschienen', 
-            'Armschienen', 
-            'Maske', 
-            'Robe'
-            'Sonnengottheit', 
-            'Mondgottheit', 
-            'Kriegsgottheit', 
-            'Liebesgottheit', 
-            'Todesgottheit', 
-            'Naturgottheit', 
-            'Weisheitsgottheit', 
-            'Chaosgottheit', 
-            'Meeresgottheit', 
-            'Feuergottheit', 
-            'Erdmutter', 
-            'Sturmgottheit', 
-            'Traumgottheit', 
-            'Schicksalsgottheit'
-            'Krone', 
-            'Münze',
-            'Sanduhr', 
-            'Laterne', 
-            'Karte'
-    ];
-    const maskulinKategorien = [
-            'Wald', 
-            'Turm', 
-            'Tempel', 
-            'Marktplatz', 
-            'Friedhof', 
-            'Vulkan', 
-            'Wasserfall', 
-            'Palast'
-            'Drache', 
-            'Phönix', 
-            'Greif', 
-            'Elementar', 
-            'Geist', 
-            'Golem', 
-            'Basilisk', 
-            'Troll', 
-            'Zwerg', 
-            'Gnom', 
-            'Werwolf', 
-            'Vampir', 
-            'Mantikore',
-            'Bogen', 
-            'Stab', 
-            'Dolch', 
-            'Hammer', 
-            'Speer', 
-            'Schild', 
-            'Streitkolben',
-            'Baum', 
-            'Pilz',
-            'Farn', 
-            'Strauch', 
-            'Kaktus', 
-            'Lotus', 
-            'Efeu', 
-            'Bambus'
-            'Ballon', 
-            'Teppich', 
-            'Wagen', 
-            'Gleiter',
-            'Schlitten'
-            'Feuerball', 
-            'Eissturm', 
-            'Blitz', 
-            'Schutzschild', 
-            'Brustpanzer', 
-            'Helm',  
-            'Stiefel', 
-            'Umhang', 
-            'Schulterpanzer', 
-            'Schuppenpanzer', 
-            'Gürtel', 
-            'Harnisch',
-            'Ring', 
-            'Kelch', 
-            'Spiegel', 
-            'Kristall', 
-            'Schlüssel',
-            'Kompass',
-    ];
-    
-    if (femininKategorien.includes(task.basis)) {
-        artikel = 'eine';
-    } else if (maskulinKategorien.includes(task.basis)) {
-        artikel = 'einen';
-    }
-    
-    // Eigenschaftsform anpassen
     let eigenschaftForm = task.eigenschaft;
-    if (femininKategorien.includes(task.basis)) {
+    
+    if (femininWoerter.includes(task.basis)) {
+        artikel = 'eine';
         eigenschaftForm = task.eigenschaft + 'e';
-    } else if (maskulinKategorien.includes(task.basis)) {
+    } else if (maskulinWoerter.includes(task.basis)) {
+        artikel = 'einen';
         eigenschaftForm = task.eigenschaft + 'en';
     } else {
+        // Neutrum (ein, -es)
+        artikel = 'ein';
         eigenschaftForm = task.eigenschaft + 'es';
     }
     
