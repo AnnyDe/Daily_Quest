@@ -67,7 +67,7 @@ function displayTask() {
     
     // Finale Aufgabe zusammensetzen mit korrekten deutschen Artikeln
     let artikel = 'ein';
-    const femininKategorien = [items: [
+    const femininKategorien = [
             'Höhle', 
             'Brücke', 
             'Schmiede', 
