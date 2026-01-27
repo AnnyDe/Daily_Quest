@@ -205,17 +205,17 @@ function displayTask() {
             'Kompass',
     ];
     
-    if (femininKategorien.includes(task.kategorie)) {
+    if (femininKategorien.includes(task.basis)) {
         artikel = 'eine';
-    } else if (maskulinKategorien.includes(task.kategorie)) {
+    } else if (maskulinKategorien.includes(task.basis)) {
         artikel = 'einen';
     }
     
     // Eigenschaftsform anpassen
     let eigenschaftForm = task.eigenschaft;
-    if (femininKategorien.includes(task.kategorie)) {
+    if (femininKategorien.includes(task.basis)) {
         eigenschaftForm = task.eigenschaft + 'e';
-    } else if (maskulinKategorien.includes(task.kategorie)) {
+    } else if (maskulinKategorien.includes(task.basis)) {
         eigenschaftForm = task.eigenschaft + 'en';
     } else {
         eigenschaftForm = task.eigenschaft + 'es';
